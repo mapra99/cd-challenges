@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/palindrome-number/
+
 # frozen_string_literal: true
 
 # @param {Integer} x

@@ -1,3 +1,6 @@
+# https://leetcode.com/problems/search-in-rotated-sorted-array/
+# NOT FNISHED YET
+
 # frozen_string_literal: true
 
 def search(nums, target)
