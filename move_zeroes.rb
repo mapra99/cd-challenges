@@ -2,22 +2,29 @@
 
 # @param {Integer[]} nums
 # @return {Void} Do not return anything, modify nums in-place instead.
-def move_zeroes(nums, start = 0)
-  return nums if start >= nums.length
+def move_zeroes(nums)
+  i = 0
+  (0...nums.length).each do |j|
+    if nums[j] != 0
+      nums[i], nums[j] = nums[j], nums[i]
+      i += 1
+    end
+  end
 
-  zero_index = start
-  zero_index += 1 until nums[zero_index] == 0 || nums[zero_index].nil?
-
-  return nums if nums[zero_index].nil?
-
-  number_index = zero_index
-  number_index += 1 until nums[number_index] != 0 || nums[number_index].nil?
-
-  return nums if nums[number_index].nil?
-
-  nums[zero_index] = nums[number_index]
-  nums[number_index] = 0
-  move_zeroes(nums, zero_index + 1)
+  nums
 end
 
-puts move_zeroes [0,1,0,3,12]
+puts "#{move_zeroes [1,0,1]}"
+# [1,1,0]
+
+puts "#{move_zeroes [0,1,0,3,12]}"
+# [1,3,13,0,0]
+
+puts "#{move_zeroes [2,1,1,3,12]}"
+# [2,1,1,3,12]
+
+puts "#{move_zeroes [0,1,1,3,12]}"
+# [1,1,3,12,0]
+
+puts "#{move_zeroes [0,1,0,0,0]}"
+# [1,0,0,0,0]
