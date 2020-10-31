@@ -29,3 +29,7 @@ console.timeEnd('test');
 console.time('test');
 console.log(`${squares(1, 1000000000)} -- ${squares(1, 1000000000)==2}`);
 console.timeEnd('test');
+
+console.time('test');
+console.log(`${squares(1000000000, 1000000000000000000)} -- ${squares(1000000000, 1000000000000000000)==2}`);
+console.timeEnd('test');
