@@ -1,6 +1,6 @@
 // https://edabit.com/challenge/aHFBLwgCPKBoAcJAA
 
-function sherlockAndSquares(a, b) {
+function squares(a, b) {
   let i = a;
   while (i <= b && !isSquare(i)) i += 1;
   if (i > b && !isSquare(b)) return 0;
@@ -18,4 +18,14 @@ function isSquare(num) {
   return squareRoot === parseInt(squareRoot, 10);
 }
 
-console.log(sherlockAndSquares(23, 50));
+console.time('test');
+console.log(`${squares(3,9)} -- ${squares(3,9)==2}`);
+console.timeEnd('test');
+
+console.time('test');
+console.log(`${squares(17,24)} -- ${squares(17,24)==2}`);
+console.timeEnd('test');
+
+console.time('test');
+console.log(`${squares(1, 1000000000)} -- ${squares(1, 1000000000)==2}`);
+console.timeEnd('test');
